@@ -20,17 +20,10 @@
 
 ## 📸 Preview
 
-### Signup
-
-![Signup](screenshots/signup.png)
-
 ### Login
 
-![Login](screenshots/login.png)
+<img width="1912" height="846" alt="image" src="https://github.com/user-attachments/assets/9bc9b1b5-f9ac-4adf-b870-fcdbe536ea72" />
 
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
 
 ---
 
