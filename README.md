@@ -1,76 +1,127 @@
 # 🔐 MERN Auth Pro
 
-> A production-ready authentication system built with the MERN stack using JWT Authentication, Refresh Token Rotation, HttpOnly Cookies, and modern security best practices.
+A production-ready authentication system built with the **MERN Stack** implementing **JWT Authentication**, **Access & Refresh Tokens**, **HttpOnly Cookies**, and modern backend security practices.
 
-![React](https://img.shields.io/badge/React-19-blue?logo=react)
-![Node](https://img.shields.io/badge/Node.js-22-green?logo=node.js)
-![Express](https://img.shields.io/badge/Express-black?logo=express)
-![MongoDB](https://img.shields.io/badge/MongoDB-green?logo=mongodb)
-![License](https://img.shields.io/badge/License-MIT-blue)
+This project demonstrates a secure authentication workflow suitable for production-ready web applications while following clean architecture and REST API principles.
 
----
-
-## ✨ Live Demo
-
-🌐 Frontend: https://mern-auth-pro.vercel.app
-
-⚡ Backend API: https://mern-auth-pro-qjfj.onrender.com
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-22-339933?logo=node.js)
+![Express](https://img.shields.io/badge/Express.js-000000?logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb)
+![JWT](https://img.shields.io/badge/JWT-Authentication-orange)
 
 ---
 
-## 📸 Preview
+# 🌐 Live Demo
 
-### Login
+**Frontend**
 
-<img width="1912" height="846" alt="image" src="https://github.com/user-attachments/assets/9bc9b1b5-f9ac-4adf-b870-fcdbe536ea72" />
+https://mern-auth-pro.vercel.app
+
+**Backend API**
+
+https://mern-auth-pro-qjfj.onrender.com
+
+---
+
+# 📷 Screenshots
+
+## Login
+
+<img width="1912" height="846" alt="Screenshot 2026-07-28 173231" src="https://github.com/user-attachments/assets/f3bbec2c-e907-4d84-8343-bef56870318f" />
 
 
 ---
 
-# 🚀 Features
+# ✨ Features
 
-✅ Secure User Registration
-
-✅ JWT Authentication
-
-✅ Refresh Token Rotation
-
-✅ HttpOnly Cookie Authentication
-
-✅ Password Hashing using bcrypt
-
-✅ Express Validator
-
-✅ Protected Routes
-
-✅ Persistent Login
-
-✅ Automatic Access Token Refresh
-
-✅ Session Logout
-
-✅ Multi-device Refresh Tokens
-
-✅ Helmet Security
-
-✅ Rate Limiting
-
-✅ Responsive Premium UI
+- Secure User Registration & Login
+- JWT Authentication
+- Access Token + Refresh Token Flow
+- Refresh Token Rotation
+- HttpOnly Cookie Authentication
+- Password Hashing using bcrypt
+- Protected Routes
+- Automatic Session Refresh
+- Express Validator
+- Rate Limiting
+- Helmet Security
+- Responsive Modern UI
+- MongoDB Atlas Integration
 
 ---
 
-# 🏗️ Tech Stack
+# 🏗️ Architecture Overview
+
+<img width="1912" height="846" alt="Screenshot 2026-07-28 173231" src="https://github.com/user-attachments/assets/54cc03ac-a20f-439f-a17f-7b4a2b169395" />
+
+```
+React (Vite)
+      │
+ Axios API Calls
+      │
+Express.js REST API
+      │
+JWT Authentication
+      │
+MongoDB Atlas
+```
+
+### Authentication Flow
+
+```
+User Login / Signup
+        │
+        ▼
+Generate Access Token (15 Minutes)
+
+Generate Refresh Token (7 Days)
+
+↓
+
+Access Token returned to Frontend
+
+↓
+
+Refresh Token stored in HttpOnly Cookie
+
+↓
+
+Protected API Request
+
+↓
+
+Access Token Expires
+
+↓
+
+Frontend requests /auth/refresh
+
+↓
+
+Backend validates Refresh Token
+
+↓
+
+New Access Token Generated
+
+↓
+
+User stays logged in
+```
+
+---
+
+# 🛠️ Tech Stack
 
 ## Frontend
 
 - React
 - Vite
 - Axios
-- React Router
+- React Router DOM
 - Context API
 - Tailwind CSS
-
----
 
 ## Backend
 
@@ -82,84 +133,60 @@
 - bcryptjs
 - Express Validator
 - Helmet
-- Morgan
 - Compression
+- Morgan
 - Cookie Parser
 - Express Rate Limit
 
 ---
 
-# 📂 Folder Structure
+# 📂 Project Structure
 
 ```
-MERN-AUTH
+mern-auth-pro/
 │
-├── backend
-│   ├── middleware
-│   ├── models
-│   ├── routes
-│   ├── validators
-│   └── server.js
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
 │
-├── frontend
-│   ├── components
-│   ├── pages
-│   ├── api.js
-│   └── AuthContext.jsx
+├── backend/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── validators/
+│   ├── app.js
+│   ├── server.js
+│   └── package.json
 │
 └── README.md
 ```
 
 ---
 
-# 🔐 Authentication Flow
-
-```
-Signup/Login
-      │
-      ▼
-Generate Access Token (15 min)
-
-Generate Refresh Token (7 days)
-
-Refresh Token stored in HttpOnly Cookie
-
-Access Token stored only in memory
-
-When Access Token expires
-
-↓
-
-Frontend calls /refresh
-
-↓
-
-Backend validates Refresh Token
-
-↓
-
-Issues new Access Token
-
-↓
-
-User stays logged in
-```
-
----
-
 # 🔒 Security Features
 
-- Password Hashing (bcrypt)
 - JWT Authentication
 - Refresh Token Rotation
 - HttpOnly Cookies
-- Protected Routes
+- Password Hashing (bcrypt)
 - CORS Protection
 - Helmet
 - Express Validator
+- Protected Routes
 - Rate Limiting
 - Secure Cookie Configuration
 - Token Revocation on Logout
+
+---
+
+# 🚀 Deployment
+
+| Service | Platform |
+|----------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | MongoDB Atlas |
 
 ---
 
@@ -168,12 +195,10 @@ User stays logged in
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mern-auth.git
+git clone https://github.com/Meenu-Pandey/mern-auth-pro.git
 
-cd mern-auth
+cd mern-auth-pro
 ```
-
----
 
 ## Backend
 
@@ -205,8 +230,6 @@ CLIENT_URL=http://localhost:5173
 NODE_ENV=development
 ```
 
----
-
 ## Frontend
 
 ```bash
@@ -225,7 +248,7 @@ VITE_API_URL=http://localhost:5000/api
 
 ---
 
-# 📡 API Endpoints
+# 📡 REST API
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -233,21 +256,27 @@ VITE_API_URL=http://localhost:5000/api
 | POST | `/api/auth/login` | Login |
 | POST | `/api/auth/refresh` | Refresh Access Token |
 | POST | `/api/auth/logout` | Logout |
-| GET | `/api/auth/me` | Get Logged User |
+| GET | `/api/auth/me` | Get Current User |
 
 ---
 
-# 🧪 Future Improvements
+# 🤖 AI Tools Used
+
+- ChatGPT (Architecture, debugging, deployment guidance)
+- GitHub Copilot (Frontend component improvements)
+
+---
+
+# 🚀 Future Enhancements
 
 - Email Verification
 - Forgot Password
 - Password Reset
-- Google OAuth
-- GitHub OAuth
+- OAuth (Google / GitHub)
 - Two-Factor Authentication
-- Redis Token Store
 - Docker Support
 - CI/CD Pipeline
+- Redis-based Token Store
 
 ---
 
@@ -255,6 +284,6 @@ VITE_API_URL=http://localhost:5000/api
 
 **Meenu Pandey**
 
----
+- GitHub: https://github.com/Meenu-Pandey
 
-⭐ If you found this project useful, consider giving it a star.
+- LinkedIn: https://linkedin.com/in/mpandey4
