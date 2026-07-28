@@ -53,7 +53,7 @@ https://mern-auth-pro-qjfj.onrender.com
 
 # 🏗️ Architecture Overview
 
-<img width="1912" height="846" alt="Screenshot 2026-07-28 173231" src="https://github.com/user-attachments/assets/54cc03ac-a20f-439f-a17f-7b4a2b169395" />
+<img width="1536" height="1024" alt="ChatGPT Image Jul 28, 2026, 06_28_12 PM" src="https://github.com/user-attachments/assets/2f3edb70-02dc-4310-8007-93233379a3ad" />
 
 ```
 React (Vite)
