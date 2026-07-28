@@ -12,9 +12,9 @@
 
 ## ✨ Live Demo
 
-🌐 Frontend: **Coming Soon**
+🌐 Frontend: https://mern-auth-pro.vercel.app
 
-⚡ Backend API: **Coming Soon**
+⚡ Backend API: https://mern-auth-pro-qjfj.onrender.com
 
 ---
 
