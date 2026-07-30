@@ -11,7 +11,7 @@ import { errorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
 
-app.use( cors({ origin: "https://mern-auth-pro.vercel.app", credentials: true, methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], allowedHeaders: ["Content-Type", "Authorization"], }) ); 
+app.use( cors({ origin: process.env.CLIENT_URL, credentials: true, methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], allowedHeaders: ["Content-Type", "Authorization"], }) ); 
 app.options("*", cors());
 
 app.use(helmet());
