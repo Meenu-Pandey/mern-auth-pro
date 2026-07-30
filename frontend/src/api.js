@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
-
+const API_URL = "https://mern-auth-pro-qifj.onrender.com";
 // Access token is kept in memory only (not localStorage) to reduce XSS exposure.
 // The refresh token lives in an httpOnly cookie set by the server, so JS never touches it.
 let accessToken = null;
